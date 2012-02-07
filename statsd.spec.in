@@ -1,13 +1,13 @@
 
-Name:           is24-statsd
-Version:        0.8
+Name:           statsd
+Version:        DATE
 Release:        1%{?dist}
 Summary:        monitoring daemon, that aggregates events received by udp in 10 second intervals
 Group:          Applications/Internet
 License:        Etsy open source license
-URL:            https://github.com/oli99sc/statsd
-Vendor:         Etsy, modified my OSchmitz IS24
-Packager:       OSchmitz IS24 <oliver.schmitz@immobilienscout24.de>
+URL:            https://github.com/etsy/statsd
+Vendor:         Etsy, 
+Packager:       Kris Buytaert <kris@inuits.eu>
 Source0:        %{name}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
@@ -26,12 +26,12 @@ echo "build not needed"
 
 %install
 # install the js files which to the work
-%{__mkdir_p} %{buildroot}/usr/share/is24-statsd
-%{__install} -Dp -m0644 stats.js config.js %{buildroot}/usr/share/is24-statsd
+%{__mkdir_p} %{buildroot}/usr/share/statsd
+%{__install} -Dp -m0644 stats.js config.js %{buildroot}/usr/share/statsd
 
 
 # Install init scripts
-%{__install} -Dp -m0755 redhat/is24-statsd %{buildroot}%{_initrddir}/%{name}
+%{__install} -Dp -m0755 redhat/statsd %{buildroot}%{_initrddir}/%{name}
 
 # Install default configuration files
 %{__install} -Dp -m0644 exampleConfig.js  %{buildroot}%{_sysconfdir}/%{name}/config.js

@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#	/etc/rc.d/init.d/is24-statsd
+#	/etc/rc.d/init.d/statsd
 #
 # Starts the is24 statsd daemon
 #
@@ -20,9 +20,9 @@
 # Source function library.
 . /etc/rc.d/init.d/functions
 
-NAME=is24-statsd
+NAME=statsd
 INSTALL_DIR=/usr/share/$NAME
-NODE_EXE=/usr/bin/node
+NODE_EXE=/usr/bin/nodejs
 
 [ -x $NODE_EXE ] || exit 0
 [ -f $INSTALL_DIR/stats.js ] || exit 0
