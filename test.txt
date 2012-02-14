@@ -1,0 +1,3 @@
+http://seejohncode.com/2012/01/05/statsd-in-php
+http://getsparks.org/packages/statsd/show
+http://logstash.net/docs/1.0.17/outputs/statsd
