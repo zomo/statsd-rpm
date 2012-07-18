@@ -28,6 +28,8 @@ echo "build not needed"
 # install the js files which to the work
 %{__mkdir_p} %{buildroot}/usr/share/statsd
 %{__install} -Dp -m0644 stats.js config.js %{buildroot}/usr/share/statsd
+%{__mkdir_p} %{buildroot}/usr/share/statsd/backends
+%{__install} -Dp -m0644 backends/graphite.js %{buildroot}/usr/share/statsd/backends
 
 
 # Install init scripts
@@ -67,8 +69,10 @@ chkconfig --add %{name}
 %files
 %defattr(-,root,root,-)
 %doc LICENSE README.md
-%doc StatsdClient.java php-example.php python_example.py
 %doc exampleConfig.js
+%doc examples/csharp_example.cs  examples/php-example.php    examples/README.md         examples/ruby_example.rb    examples/statsd.erl
+%doc examples/perl-example.pl    examples/python_example.py  examples/ruby_example2.rb  examples/StatsdClient.java  examples/statsd.go
+%doc examples/Etsy/StatsD.pm
 
 
 /usr/share/%{name}/*
